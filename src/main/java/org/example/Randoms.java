@@ -21,8 +21,6 @@ public class Randoms implements Iterable<Integer> {
 
     private class Randomizer implements Iterator {
 
-        int index;
-
         @Override
         public boolean hasNext() {
             return true;
@@ -30,8 +28,7 @@ public class Randoms implements Iterable<Integer> {
 
         @Override
         public Object next() {
-            index = random.nextInt(min, max) + 1;
-            return index;
+            return random.nextInt(max - min) + 1 + min;
         }
     }
 }
